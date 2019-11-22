@@ -1,0 +1,26 @@
+<form [formGroup]="addProductForm" (ngSubmit)="addSuccess()">
+  <div class="form-group">
+    <label>id</label>
+    <input type="text" class="form-control" formControlName="id">
+    <div *ngIf="id.invalid&&id.touched">
+      <div *ngIf="id.errors?.required"><p class="text-danger">ID khog duoc de trong</p></div>
+      <div *ngIf="id.errors?.minlength"><p class="text-danger">ngan qua</p></div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" formControlName="name">
+    <div *ngIf="name.errors?.required"><p class="text-danger">ID khog duoc de trong</p></div>
+<!--    <div *ngIf="name.errors?.minlength"><p>ngan qua</p></div>-->
+  </div>
+  <div class="form-group">
+    <label>Price</label>
+    <input type="text" class="form-control" formControlName="price">
+    <div *ngIf="price.errors?.required"><p class="text-danger">ID khog duoc de trong</p></div>
+    <div *ngIf="price.errors?.minlength"><p>ngan qua</p></div>
+  </div>
+  <div>
+    <button type="submit" class="btn btn-primary" [disabled]="!addProductForm.valid">Create</button>
+    <button routerLink="/products" class="btn btn-secondary ml-2">Cancel</button>
+  </div>
+</form>

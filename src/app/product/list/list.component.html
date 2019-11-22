@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="">id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr *ngFor="let product of listProducts">
+          <th scope="row">{{product.id}}</th>
+          <td>{{product.name}}</td>
+          <td>{{product.price}}</td>
+          <td>
+            <button>edit</button>
+            <button>delete</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
